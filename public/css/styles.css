@@ -29,8 +29,7 @@ body {
 background: #FFF9DE;
 border-radius: 20px;
 padding: 25px;
-margin-left: 100px;
-margin-right: 100px;
+
 
 }
 
@@ -38,8 +37,7 @@ margin-right: 100px;
 
 	padding-top: .45em;
 	padding-bottom: .2em;
-	padding-left: 35%;
-	padding-right: 35%;
+	min-width: 50%;
 	background: #E6EFFF;
 	border-radius: 20px;
 	vertical-align: center;
@@ -69,11 +67,17 @@ button {
 }
 
 #top-wrapper {
+	margin-left: 100px;
+	margin-right: 100px;
 
 }
 #top-container {
 	font-size: 5em;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	width: 100%;
 }
+
 #bottom-wrapper {
 }
 
@@ -116,6 +120,7 @@ form button {
 	list-style-type: none; 
 	margin: 0; 
 	padding: 0; 
+	min-height: 250px;
 
 }
 
