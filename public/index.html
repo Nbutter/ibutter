@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<meta charset="UTF-8">
 <head>
-	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Robots</title>
+	<link href='http://fonts.googleapis.com/css?family=Rokkitt|Varela+Round' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<script src='bundle.js'></script>
 	<script src='js/app.js'></script>
 </head>
 <body>
-	<h1>Hello world!</h1>
+	<div id="page-container">
+		<div id="top-wrapper" class="wrapper">
+			<div id="top-container" class="serif container">
+				Robots
+			</div>
+		</div>
+		<div id="main-wrapper" class="wrapper">
+			<div id="main-container" class="container">
+				<div id="login">
+					<div class="main-head serif">	
+						Sign Up Or Log In
+						<div id="signup" class="sans">
+							<div class="form-row">Name: <input type="text" name="username"></div>
+							<div class="form-row">Password:<input type="text" name="password"></div>
+							<div class="form-row">Favorite Color:<input type="text" name="color"></div>
+							<div class="form-row"><button type="button">Submit</button></div>
+						</div>
+					</div>
+				</div>
+				<div id="select">
+					<div class="main-head serif">
+						Pick a Robot
+					</div>
+					<div id="robots" class="sans">
+						<button type="button">ALICE</button>
+						<button type="button">ELIZA</button>
+						<button type="button">nodeBot</button>
+					</div>
+				</div>
+				<div id="chat">
+					<div class="main-head serif">
+						Robot Name here
+					</div>
+					<div id="chat" class="sans">
+						<ul id="messages"></ul>
+    					<form action="">
+      					<input id="m" autocomplete="off" />
+      					<button type="button">Send</button>
+    					</form>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 </html>
+

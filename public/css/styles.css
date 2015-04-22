@@ -1,0 +1,136 @@
+/*
+	IDs: 	page-container
+		 	top-container
+			main-container
+
+	PALETTE: #E6EFFF; #EEFEE9; #FFF9DE; #FFE9FB; #E3E3E3; #CFCFCF;
+
+
+*/
+
+.serif {
+	
+	font-family: 'Rokkitt', serif;
+
+}
+
+.sans {
+
+	font-family: 'Varela Round', sans-serif;
+
+}
+
+body {
+	background: #CFCFCF;
+}
+
+.wrapper {
+
+background: #FFF9DE;
+border-radius: 20px;
+padding: 25px;
+margin-left: 100px;
+margin-right: 100px;
+
+}
+
+.container {
+
+	padding-top: .45em;
+	padding-bottom: .2em;
+	padding-left: 35%;
+	padding-right: 35%;
+	background: #E6EFFF;
+	border-radius: 20px;
+	vertical-align: center;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+.main-head {
+	font-size: 2.5em;
+}
+
+.form-row {
+	font-size: .5em;
+}
+
+.form-row input{
+	width: 300px;
+	height: 20px;
+}
+
+button {
+	width: 300px;
+	height: 50px;
+	margin-top: 10px;
+	font-size: 1em;
+}
+
+#top-wrapper {
+
+}
+#top-container {
+	font-size: 5em;
+}
+#bottom-wrapper {
+}
+
+#bottom-container {
+
+}
+
+/* styles associated with the form for robot chat */
+
+form { 
+
+	background: #000; 
+	padding: 3px; 
+	bottom: 0; 
+	width: 100%;
+	margin-left:0;
+
+}
+
+form input { 
+
+	border: 0; 
+	padding: 10px; 
+	width: 90%; 
+	margin-right: .5%; 
+
+}
+
+form button { 
+
+	width: 9%; 
+	background: rgb(130, 224, 255); 
+	border: none; 
+	padding: 10px; 
+
+}
+
+#messages { 
+
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+
+}
+
+#messages li { 
+
+	padding: 5px 10px; 
+
+}
+
+#messages li:nth-child(odd) { 
+
+	background: #eee; 
+
+}
+
+
+
+
