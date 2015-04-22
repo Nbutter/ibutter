@@ -21,41 +21,47 @@
 		</div>
 		<div id="main-wrapper" class="wrapper">
 			<div id="main-container" class="container">
-				<div id="login">
-					<div class="main-head serif">	
-						Sign Up Or Log In
-						<div id="signup" class="sans">
-							<div class="form-row">Name: <input type="text" name="username"></div>
-							<div class="form-row">Password:<input type="text" name="password"></div>
-							<div class="form-row">Favorite Color:<input type="text" name="color"></div>
-							<div class="form-row"><button type="button">Submit</button></div>
-						</div>
-					</div>
-				</div>
-				<div id="select">
-					<div class="main-head serif">
-						Pick a Robot
-					</div>
-					<div id="robots" class="sans">
-						<button type="button">ALICE</button>
-						<button type="button">ELIZA</button>
-						<button type="button">nodeBot</button>
-					</div>
-				</div>
-				<div id="chat">
-					<div class="main-head serif">
-						Robot Name here
-					</div>
-					<div id="chat" class="sans">
-						<ul id="messages"></ul>
-    					<form action="">
-      					<input id="m" autocomplete="off" />
-      					<button type="button">Send</button>
-    					</form>
-					</div>
-				</div>
+
 			</div>
 		</div>
+
+					<template id="login-template">
+						<div class="main-head serif">	
+							Sign Up Or Log In
+							<div id="signup" class="sans">
+								<div class="form-row">Name: <input type="text" name="username"></div>
+								<div class="form-row">Password:<input type="text" name="password"></div>
+								<div class="form-row">Favorite Color:<input type="text" name="color"></div>
+								<div class="form-row"><button type="button">Submit</button></div>
+							</div>
+						</div>
+					</template>
+	
+					<template id="select-template">
+						<div class="main-head serif">
+							Pick a Robot
+						</div>
+						<div id="robots" class="sans">
+							<button type="button">ALICE</button>
+							<button type="button">ELIZA</button>
+							<button type="button">nodeBot</button>
+						</div>
+					</template>
+	
+					<template id="chat-template">
+						<div class="main-head serif">
+							<span class="robot-name">Robot Name</span>
+						</div>
+						<div id="chat" class="sans">
+							<ul id="messages"></ul>
+	    					<form action="">
+	      					<input id="m" autocomplete="off" />
+	      					<button type="button">Send</button>
+	    					</form>
+						</div>
+					</template>
+
+
 </body>
 </html>
 
