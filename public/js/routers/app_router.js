@@ -1,17 +1,22 @@
 App.Routers.Main = Backbone.Router.extend({
 	initialize: function(){
-		Backbone.history.start({pushState: true});
-		console.log("router up and history started");
+		console.log("router up");
 	},
 	routes: {
 		"login": 	function(){
-			App.mainView.show(App.selectView);
+			App.mainView.show(App.loginView);
 		},
 		"select": 	function(){
-			console.log( "SELECT ROUTE HIT" );
+			App.mainView.show(App.selectView);
 		},
+
 		"chat/:robot": 	function(robot){
-			console.log( "CHAT ROUTE HIT, CHAT WITH " + robot + "REQUESTED" );
+			console.log("CHAT ROUTE HIT")
+			console.log("ROBOT REQUESTED: " + robot)
+			App.chatView.setRobot(robot);
+			App.mainView.show(App.chatView);
+			App.chatView
+
 		},
 		"logs": 	function(){
 			console.log( "LOGS ROUTE HIT" );

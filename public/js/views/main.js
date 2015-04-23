@@ -27,12 +27,14 @@ App.Views.Main = Backbone.View.extend({
 		// we need to get values from the form, submit them, handle errors, etc etc
 		// for now, here's a direct link
 		console.log("You want to log in!");
-		App.mainRouter.navigate('#login', {trigger: true, replace: true});
+		App.mainRouter.navigate('#select', {trigger: true});
 
 	},
 
-	chat: function(){
-		console.log("You want to chat!");
+	chat: function(event){
+		var robot = event.currentTarget.attributes[2].nodeValue
+		console.log("You want to chat with " + robot);
+		App.mainRouter.navigate('#chat/' + robot, {trigger: true});
 	},
 
 	back: function(){

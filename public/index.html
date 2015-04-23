@@ -22,7 +22,7 @@
 		</div>
 		<div id="main-wrapper" class="wrapper">
 			<div id="main-container" class="container">
-				I should disappear soon.
+				Robot time, baby
 			</div>
 		</div>
 
@@ -43,15 +43,15 @@
 							Pick a Robot
 						</div>
 						<div id="robots" class="sans">
-							<button type="button">ALICE</button>
-							<button type="button">ELIZA</button>
-							<button type="button">nodeBot</button>
+							<button type="button" class="robot-name" data-robot="alice">ALICE</button>
+							<button type="button" class="robot-name" data-robot="eliza">ELIZA</button>
+							<button type="button" class="robot-name" data-robot="nodebot">nodeBot</button>
 						</div>
 					</template>
 	
 					<template id="chat-template">
 						<div class="main-head serif">
-							<span class="robot-name">Robot Name</span>
+							<span class="robot-name">{{robot}}</span>
 						</div>
 						<div id="chat" class="sans">
 							<ul id="messages"></ul>
