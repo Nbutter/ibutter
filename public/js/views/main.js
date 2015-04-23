@@ -18,15 +18,16 @@ App.Views.Main = Backbone.View.extend({
 	},
 
 	events: {
-		"click .robot-name" : "chat", 
+		"click .robot-name-button" : "chat", 
 		"click #login-submit" : "login",
 		"click .back" : "back"
+
 	},
 
 	login: function(){
 		// we need to get values from the form, submit them, handle errors, etc etc
 		// for now, here's a direct link
-		console.log("You want to log in!");
+		App.User.name = $( "[name='username']").val();
 		App.mainRouter.navigate('#select', {trigger: true});
 
 	},
@@ -40,7 +41,6 @@ App.Views.Main = Backbone.View.extend({
 	back: function(){
 		console.log("I don't know how to go back!");
 	}
-
 
 
 });

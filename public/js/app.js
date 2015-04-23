@@ -5,7 +5,8 @@ var App = {
 	Routers: {},
 	User: {
 		name: 'Bruce Wilcox'
-	}
+	},
+	currentRobot: 'no robot selected'
 };
 
 $(function() {
@@ -15,8 +16,9 @@ $(function() {
 	Backbone.history.start({root:''});  //pushState: true
 	console.log("history started");
 	App.socket = io();
-	App.socket.on('chat message', function(msg){
-    		$('#messages').append($('<li>').text(msg));
+	App.socket.on('chat message', function(botMsg){
+		var botPrompt = App.currentRobot + ": ";
+    		$('#messages').append($('<li>').text(botPrompt + botMsg));
   		});
 
 });
