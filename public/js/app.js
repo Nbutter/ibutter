@@ -6,5 +6,7 @@ var App = {
 };
 
 $(function() {
-	console.log('Loaded, bro.');
+	console.log('app.js is loaded');
+	App.mainRouter = new App.Routers.Main();
+	App.mainView = new App.Views.Main();
 });
