@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+var RiveScript = require('rivescript');
 var path             = require('path');
 
 
@@ -14,17 +15,17 @@ io.on('connection', function(socket){
   	console.log("Server got a message! ", incomingMsg);
   	if (incomingMsg.indexOf("INIT") != -1) {
   		if (incomingMsg.indexOf("Quotebot") != -1){
-  			console.log("QUOTEBOT REQUESTED")
-  			var bot = require('child_process').spawn(__dirname + '/node_modules/bot/bin/bot', {stdio: ['pipe', 'pipe', 'pipe']});
-			bot.stdin.setEncoding = 'utf-8'; 
-			bot.stdout.setEncoding = 'utf-8';
+  			console.log("QUOTEBOT REQUESTED");
+  			var quotebot = require('child_process').spawn(__dirname + '/node_modules/bot/bin/bot', {stdio: ['pipe', 'pipe', 'pipe']});
+			quotebot.stdin.setEncoding = 'utf-8'; 
+			quotebot.stdout.setEncoding = 'utf-8';
 			socket.on('chat message', function(myMsg){
-  			bot.stdin.write(myMsg + '\n');
+  			quotebot.stdin.write(myMsg + '\n');
     		console.log("I sent the bot a message: ", myMsg);
     		//io.emit('chat message', myMsg);
-	});
+		});
   
-  	bot.stdout.on('data', function(botMsg){
+  		quotebot.stdout.on('data', function(botMsg){
     	botMsg = botMsg.toString();
     	if (botMsg.indexOf('[36') != -1 ) {
     		console.log("{36 found!");
@@ -32,13 +33,27 @@ io.on('connection', function(socket){
     		console.log("Ending: ", ending)
     		botMsg = botMsg.substring(15);
     		console.log("the bot said: ", botMsg);
-    		io.emit('chat message', botMsg);
+    		io.emit('bot message', botMsg);
     		}
  		});
+  		} else if (incomingMsg.indexOf("Alice") != -1){
+  			console.log("ALICE REQUESTED!");
+  			var alicebot = new RiveScript();
+  			alicebot.loadDirectory("./robot_data/alice_rivescript", loading_done, loading_error);
+  			function loading_error(err){
+  				console.log("ERROR JACK: ", err);
+  			} 
+  			function loading_done(){
+  				alicebot.sortReplies();
+  				socket.on('chat message', function(myMsg){
+  					io.emit('bot message', alicebot.reply('User', myMsg) )
+  				});
+  			}
+
   		}
   	}
   	if (incomingMsg === 'marco') {
-  		io.emit('chat message', 'polo');
+  		io.emit('bot message', 'polo');
   	}
   });
 });

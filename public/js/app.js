@@ -16,7 +16,7 @@ $(function() {
 	Backbone.history.start({root:''});  //pushState: true
 	console.log("history started");
 	App.socket = io();
-	App.socket.on('chat message', function(botMsg){
+	App.socket.on('bot message', function(botMsg){
 		var botPrompt = App.currentRobot + ": ";
     		$('#messages').append($('<li>').text(botPrompt + botMsg));
   		});
