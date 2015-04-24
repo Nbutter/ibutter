@@ -31,6 +31,9 @@ io.on('connection', function(socket){
     		console.log("{36 found!");
     		var ending = botMsg.lastIndexOf('[35');
     		console.log("Ending: ", ending)
+        if (ending != -1) {
+          botMsg = botMsg.substring(0, ending);
+        }
     		botMsg = botMsg.substring(15);
     		console.log("the bot said: ", botMsg);
     		io.emit('quotebot message', botMsg);
