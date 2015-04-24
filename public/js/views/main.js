@@ -18,7 +18,7 @@ App.Views.Main = Backbone.View.extend({
 	},
 
 	events: {
-		"click .robot-name-button" : "chat", 
+		"click .robot-name-button" : "chatNav", 
 		"click #login-submit" : "login",
 		"click .back" : "back"
 
@@ -32,7 +32,7 @@ App.Views.Main = Backbone.View.extend({
 
 	},
 
-	chat: function(event){
+	chatNav: function(event){
 		var robot = event.currentTarget.attributes[2].nodeValue
 		console.log("You want to chat with " + robot);
 		App.mainRouter.navigate('#chat/' + robot, {trigger: true});

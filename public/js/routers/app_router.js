@@ -11,6 +11,7 @@ App.Routers.Main = Backbone.Router.extend({
 		},
 
 		"chat/:robot": 	function(robot){
+			App.chatView = new App.Views.Chat();
 			App.chatView.setRobot(robot);
 			App.mainView.show(App.chatView);
 		},

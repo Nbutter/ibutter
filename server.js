@@ -33,7 +33,7 @@ io.on('connection', function(socket){
     		console.log("Ending: ", ending)
     		botMsg = botMsg.substring(15);
     		console.log("the bot said: ", botMsg);
-    		io.emit('bot message', botMsg);
+    		io.emit('quotebot message', botMsg);
     		}
  		});
   		} else if (incomingMsg.indexOf("Alice") != -1){
@@ -46,7 +46,7 @@ io.on('connection', function(socket){
   			function loading_done(){
   				alicebot.sortReplies();
   				socket.on('chat message', function(myMsg){
-  					io.emit('bot message', alicebot.reply('User', myMsg) )
+  					io.emit('alice message', alicebot.reply('User', myMsg) )
   				});
   			}
 

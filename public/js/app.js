@@ -6,7 +6,8 @@ var App = {
 	User: {
 		name: 'Bruce Wilcox'
 	},
-	currentRobot: 'no robot selected'
+	currentRobot: 'no robot selected',
+	socket: {}
 };
 
 $(function() {
@@ -16,9 +17,19 @@ $(function() {
 	Backbone.history.start({root:''});  //pushState: true
 	console.log("history started");
 	App.socket = io();
-	App.socket.on('bot message', function(botMsg){
-		var botPrompt = App.currentRobot + ": ";
-    		$('#messages').append($('<li>').text(botPrompt + botMsg));
-  		});
-
+	
+	App.socket.on('quotebot message', function(botMsg){
+		if (App.currentRobot === 'Quotebot'){
+			var botPrompt = App.currentRobot + ": ";
+    	$('#messages').append($('<li>').text(botPrompt + botMsg));
+    }
+  	});
+	
+	App.socket.on('alice message', function(botMsg){
+		if (App.currentRobot === 'Alice') {var botPrompt = App.currentRobot + ": ";
+    	var junkIndex = botMsg.indexOf('<');
+    	botMsg = botMsg.substring(0, junkIndex);
+    	$('#messages').append($('<li>').text(botPrompt + botMsg));
+    }
+  	});
 });
