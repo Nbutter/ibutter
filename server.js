@@ -47,6 +47,7 @@ io.on('connection', function(socket){
   				console.log("ERROR JACK: ", err);
   			} 
   			function loading_done(){
+          console.log("Alice loading done!")
   				alicebot.sortReplies();
   				socket.on('chat message', function(myMsg){
   					io.emit('alice message', alicebot.reply('User', myMsg) )
